@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: [master]
+
+permission:
+  content: read # workflow autorizzato a leggere i contenuti
+  pages: write
+  id-token: write
+
+
+jobs:
+  debloy:
+    runs-on: ubuntu-latest
+    enviroment:
+      name: github-pages
+    steps:
+      -uses: action/checkout@v4
+      -uses: action/upload-pages-artifact@v3
+      whit:
+        pach:
+      -uses: action/deploy-pages@v4
